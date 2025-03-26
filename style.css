@@ -1,0 +1,30 @@
+.menu {
+  background-color: #333; /* メニューバーの背景色 */
+  padding: 0;
+  margin: 0;
+}
+
+.menu ul {
+  list-style: none; /* リストの点を取り除く */
+  display: flex; /* メニュー項目を横並びにする */
+  justify-content: center; /* メニュー項目を中央揃えにする */
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  margin: 0;
+}
+
+.menu a {
+  display: block; /* リンクをブロック要素にする */
+  color: #fff; /* リンクの文字色 */
+  text-decoration: none; /* リンクの下線を消す */
+  padding: 15px 20px; /* リンクの余白 */
+  transition: background-color 0.3s ease; /* 背景色の変化を滑らかにする */
+}
+
+.menu a:hover {
+  background-color: #fff; /* カーソルを合わせた時の背景色 */
+  color: #333; /* カーソルを合わせた時の文字色 */
+}
