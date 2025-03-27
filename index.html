@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>反転メニューバー</title>
+  <title>俺のホームページ</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <nav class="menu">
     <ul>
-      <li><a href="#">ホーム</a></li>
+      <li><a href="#">動画リスト</a></li>
       <li><a href="#">サービス</a></li>
       <li><a href="#">最近の情報</a></li>
       <li><a href="#">ヘルプ</a></li>
     </ul>
   </nav>
+
+  <div class="content">
+    <h1 class="fade-in">動画プレーヤー</h1>
+    <input type="text" id="videoUrl" placeholder="動画のURLまたはYouTubeのIDを入力">
+    <button id="loadVideo">動画を読み込む</button>
+    <div id="videoContainer">
+      <div id="youtubeVideo" style="display: none;"></div>
+      <video id="myVideo" width="640" height="360" controls style="display: none;"></video>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
