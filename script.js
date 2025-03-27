@@ -28,18 +28,27 @@ document.addEventListener('DOMContentLoaded', function() {
   loadVideoButton.addEventListener('click', function() {
     const videoUrl = videoUrlInput.value;
     if (videoUrl) {
-      if (videoUrl.includes('youtube.com') || videoUrl.length === 11) {
-        // YouTubeの動画の場合
-        let videoId = videoUrl.length === 11 ? videoUrl : videoUrl.split('v=')[1].split('&')[0]; // YouTubeの動画IDを抽出
+      let videoId = '';
+      if (videoUrl.includes('youtube.com')) {
+        // YouTubeのURLから動画IDを抽出
+        const urlParams = new URLSearchParams(videoUrl.split('?')[1]);
+        videoId = urlParams.get('v');
+      } else if (videoUrl.length === 11) {
+        // 動画IDが直接入力された場合
+        videoId = videoUrl;
+      }
+
+      if (videoId) {
+        // YouTubeの動画を表示
         youtubeVideo.innerHTML = `<iframe width="640" height="360" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>`;
         youtubeVideo.style.display = 'block';
-        myVideo.style.display = 'none'; // 通常の動画プレーヤーを非表示
+        myVideo.style.display = 'none';
       } else {
-        // 通常の動画の場合
+        // 通常の動画を表示
         myVideo.src = videoUrl;
         myVideo.style.display = 'block';
-        youtubeVideo.style.display = 'none'; // YouTubeの動画プレーヤーを非表示
+        youtubeVideo.style.display = 'none';
       }
     }
   });
-}); 
+});
