@@ -1,13 +1,13 @@
 .menu {
-  background-color: #333; /* メニューバーの背景色 */
+  background-color: #333;
   padding: 0;
   margin: 0;
 }
 
 .menu ul {
-  list-style: none; /* リストの点を取り除く */
-  display: flex; /* メニュー項目を横並びにする */
-  justify-content: center; /* メニュー項目を中央揃えにする */
+  list-style: none;
+  display: flex;
+  justify-content: center;
   padding: 0;
   margin: 0;
 }
@@ -17,14 +17,41 @@
 }
 
 .menu a {
-  display: block; /* リンクをブロック要素にする */
-  color: #fff; /* リンクの文字色 */
-  text-decoration: none; /* リンクの下線を消す */
-  padding: 15px 20px; /* リンクの余白 */
-  transition: background-color 0.3s ease; /* 背景色の変化を滑らかにする */
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 20px;
+  transition: background-color 0.3s ease;
 }
 
 .menu a:hover {
-  background-color: #fff; /* カーソルを合わせた時の背景色 */
-  color: #333; /* カーソルを合わせた時の文字色 */
+  background-color: #fff;
+  color: #333;
+}
+
+.content {
+  padding: 50px;
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-in.active {
+  opacity: 1;
+}
+
+/* pタグの文字サイズを大きくする */
+.content p {
+  font-size: 50px; /* 好みのサイズに調整 */
+}
+
+.content h1 {
+    font-size: 50px;
+}
+
+/* 追加: 動画プレーヤーのスタイル */
+#videoContainer {
+  margin-top: 20px;
 }
